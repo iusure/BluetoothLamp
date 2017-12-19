@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg">
+
+
+    <Button
+        android:id="@+id/bt_open_bluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:onClick="clickBtn"
+        android:text="打开蓝牙" />
+
+    <Button
+        android:id="@+id/bt_close_bluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/bt_scan_start"
+        android:layout_toRightOf="@+id/bt_scan_start"
+        android:onClick="clickBtn"
+        android:text="关闭蓝牙" />
+
+    <Button
+        android:onClick="clickBtn"
+        android:id="@+id/bt_scan_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/bt_open_bluetooth"
+        android:layout_marginTop="11dp"
+        android:text="开始扫描" />
+
+    <Button
+        android:onClick="clickBtn"
+        android:id="@+id/bt_stop_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/bt_close_bluetooth"
+        android:layout_alignStart="@+id/bt_close_bluetooth"
+        android:layout_alignTop="@+id/bt_scan_start"
+        android:text="停止扫描" />
+
+    <Button
+        android:id="@+id/bt_open_lamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/bt_scan_start"
+        android:onClick="clickBtn"
+        android:text="开灯" />
+
+    <TextView
+        android:id="@+id/tv_lamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/bt_open_lamp"
+        android:layout_toEndOf="@+id/iv_lamp"
+        android:layout_toRightOf="@+id/iv_lamp"
+        android:hint="开灯状态显示"
+        android:textColor="#000"
+        android:textSize="18sp" />
+
+
+    <ImageView
+        android:id="@+id/iv_lamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_lamp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
+        android:layout_toEndOf="@+id/bt_lamp_close"
+        android:layout_toRightOf="@+id/bt_lamp_close"
+        android:background="@drawable/lamp_on" />
+
+    <TextView
+        android:id="@+id/tv_conn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bt_stop_scan"
+        android:layout_alignBottom="@+id/bt_stop_scan"
+        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
+        android:layout_toEndOf="@+id/bt_stop_scan"
+        android:layout_toRightOf="@+id/bt_stop_scan"
+        android:hint="连接状态"
+        android:textColor="#000"
+        android:textSize="18sp" />
+
+
+
+    <Button
+        android:id="@+id/bt_start_clock"
+        android:onClick="clickBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bt_close_clock"
+        android:layout_alignBottom="@+id/bt_close_clock"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="启动闹钟" />
+
+    <Button
+        android:id="@+id/bt_close_clock"
+        android:onClick="clickBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_lamp"
+        android:layout_marginTop="41dp"
+        android:layout_toEndOf="@+id/bt_stop_clock"
+        android:layout_toRightOf="@+id/bt_stop_clock"
+        android:text="关闭闹钟" />
+
+    <Button
+        android:id="@+id/bt_send"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/et_command"
+        android:layout_alignEnd="@+id/tv_lamp"
+        android:layout_alignRight="@+id/tv_lamp"
+        android:onClick="clickBtn"
+        android:text="Send"
+        android:textAllCaps="false"
+        android:textColor="#000"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/et_command"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/bt_send"
+        android:layout_alignRight="@+id/bt_send"
+        android:layout_below="@+id/bt_start_clock"
+        android:layout_marginTop="24dp"
+        android:hint="请必须输入20个字符"
+        android:maxLength="20" />
+
+    <Button
+        android:id="@+id/bt_lamp_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_lamp"
+        android:layout_toLeftOf="@+id/tv_conn"
+        android:layout_toStartOf="@+id/tv_conn"
+        android:onClick="clickBtn"
+        android:text="关灯" />
+
+    <Button
+        android:id="@+id/bt_stop_clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clickBtn"
+        android:layout_alignBaseline="@+id/bt_start_clock"
+        android:layout_alignBottom="@+id/bt_start_clock"
+        android:layout_toEndOf="@+id/bt_start_clock"
+        android:layout_toRightOf="@+id/bt_start_clock"
+        android:text="停止闹钟" />
+
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/et_command"
+        android:layout_marginTop="19dp"
+       />
+
+    <TextView
+        android:id="@+id/tv_clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bt_close_clock"
+        android:layout_alignBottom="@+id/bt_close_clock"
+        android:layout_toEndOf="@+id/bt_close_clock"
+        android:layout_toRightOf="@+id/bt_close_clock"
+        android:hint="闹钟已关闭"
+        android:textColor="#000"
+        android:textSize="18sp" />
+
+
+</RelativeLayout>
